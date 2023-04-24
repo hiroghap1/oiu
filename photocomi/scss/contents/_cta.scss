@@ -1,0 +1,30 @@
+@use "../settings/settings";
+
+.cta {
+  font-size: min(3.8vw, 1.8rem);
+  line-height: 1.5;
+  text-align: center;
+  padding: 100px var(--base-gutter);
+}
+
+.cta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 550px;
+  min-height: 110px;
+  margin-top: 1.1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: .1em;
+  background-color: #FFE67A;
+  text-decoration: none;
+  color: #000;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+  transition: .3s filter ease-out;
+  @include settings.hover {
+    filter: brightness(80%);
+  }
+}

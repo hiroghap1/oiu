@@ -1,0 +1,434 @@
+@use "../settings/settings";
+
+.section-program {
+  margin-bottom: 100px;
+  @include settings.md {
+    margin-bottom: 20px;
+  }
+}
+
+.program-flow-list {
+  margin-top: 80px;
+  padding-left: 0;
+  @include settings.md {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+  }
+  @include settings.lg {
+  }
+}
+
+.program-item__header {
+  display: grid;
+
+  .program-flow-lead {
+    grid-column: 2/3;
+    aspect-ratio: 195 / 73;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: .5em 1.25em;
+    background: url(../images/program-lead-bg.png) no-repeat center/contain;
+    line-height: 1.3;
+    font-size: .8rem;
+  }
+
+  &.--discover {
+    grid-template-columns: .45fr .55fr;
+
+    .program-item__title {
+      grid-column: 1/3;
+    }
+
+    .program-item__lead {
+      grid-column: 1/3;
+    }
+
+    .program-item__figure {
+      grid-column: 1/2;
+      margin: 0;
+      text-align: center;
+
+      & > img {
+        width: 80%;
+      }
+    }
+
+    @include settings.sm {
+      grid-template-columns: .6fr .4fr;
+      grid-template-rows: 1fr 1fr;
+      .program-item__title {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .program-item__lead {
+        grid-column: 1/2;
+        grid-row: 2/3;
+
+        &::before {
+          margin-top: -2rem;
+        }
+      }
+
+      .program-item__figure {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        text-align: left;
+
+        & > img {
+          max-width: 126px;
+        }
+      }
+      .program-flow-lead {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        padding: .5em 1.25em;
+        font-size: .8rem;
+      }
+    }
+    @include settings.md {
+      grid-template-columns: 1fr 1fr .4fr .4fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      .program-item__title {
+        grid-column: 1/2;
+        grid-row: 1/1;
+
+      }
+
+      .program-item__lead {
+        grid-column: 2/3;
+        grid-row: 1/1;
+
+        &::before {
+          content: none;
+        }
+      }
+
+      .program-item__figure {
+        grid-column: 3/4;
+        grid-row: 1/1;
+        text-align: left;
+
+        & > img {
+          width: 100%;
+        }
+      }
+      .program-flow-lead {
+        grid-column: 4/5;
+        grid-row: 1/1;
+        padding: .5em 1.25em;
+        font-size: 10px;
+        background-size: 100% 100%;
+      }
+    }
+    @include settings.lg {
+      .program-flow-lead {
+        max-width: 117px;
+        padding: 1em 1.5em;
+        font-size: 10px;
+        line-height: 1.4;
+        background-size: 100% 100%;
+      }
+    }
+  }
+
+  &.--thought {
+    grid-template-columns: .55fr .45fr;
+
+    .program-item__title {
+      grid-column: 1/3;
+    }
+
+    .program-item__lead {
+      grid-column: 1/3;
+    }
+
+    .program-item__figure {
+      grid-column: 1/3;
+      margin: 0;
+      text-align: center;
+
+      & > img {
+        width: 60%;
+      }
+    }
+
+    & + .program-flow-list {
+      @include settings.md {
+        gap: 20px;
+      }
+      @include settings.lg {
+        gap: 30px;
+      }
+
+      .program-flow-item {
+        @include settings.md {
+          &:not(:last-child) {
+            &::after {
+              top: 70%;
+              transform: translate(5px, -50%) rotate(-90deg);
+            }
+          }
+        }
+      }
+
+      .program-flow-item__figure {
+        margin: 1rem 0 0;
+
+        & > img {
+          width: auto;
+          height: 150px;
+        }
+
+        @include settings.md {
+          margin-top: auto;
+          & > img {
+            height: auto;
+          }
+        }
+        @include settings.lg {
+          & > img {
+            max-width: 190px;
+          }
+        }
+      }
+    }
+
+    @include settings.sm {
+      grid-template-columns: .6fr .4fr;
+      .program-item__title {
+        grid-column: 1/2;
+        margin-top: 1rem;
+      }
+
+      .program-item__lead {
+        grid-column: 1/2;
+
+        &::before {
+          margin-top: -.5rem;
+        }
+      }
+
+      .program-item__figure {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        margin: 0;
+        text-align: center;
+
+        & > img {
+          width: 100%;
+        }
+      }
+    }
+    @include settings.md {
+      grid-template-columns: 1fr 1fr .8fr;
+      align-items: center;
+      .program-item__title {
+        grid-column: 1/2;
+        grid-row: 1/1;
+        margin-top: 0;
+      }
+
+      .program-item__lead {
+        grid-column: 2/3;
+        grid-row: 1/1;
+      }
+
+      .program-item__figure {
+        grid-column: 3/4;
+        grid-row: 1/1;
+        margin: 0;
+        text-align: center;
+
+        & > img {
+          width: 100%;
+          max-width: 220px;
+        }
+      }
+    }
+  }
+}
+
+.program-item__title {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+
+  & > span {
+    display: inline-block;
+    margin-right: 1rem;
+    padding: 0 .5rem 1px .25rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    background: #ffe67a;
+  }
+
+  @include settings.md {
+    flex-wrap: wrap;
+    //position: relative;
+    &::after {
+      //position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      aspect-ratio: 355 / 55;
+      background: url(../images/program-title.png) no-repeat center/contain;
+      transform: translateY(-.8rem);
+    }
+  }
+  @include settings.lg {
+    font-size: 2.3rem;
+    & > span {
+      letter-spacing: .15em;
+    }
+  }
+}
+
+.program-item__lead {
+  width: fit-content;
+  margin-top: -.25rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    aspect-ratio: 355 / 55;
+    background: url(../images/program-title.png) no-repeat center/contain;
+  }
+
+  @include settings.sm {
+    width: auto;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    &::before {
+      margin-bottom: .5rem;
+    }
+  }
+  @include settings.md {
+    font-size: 1.1rem;
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.program-flow-item {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 100px;
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 25px;
+      height: 23px;
+      content: '';
+      background: url(../images/program-arrow.png) no-repeat center/contain;
+      transform: translate(-50%, 30px);
+      z-index: 1;
+    }
+  }
+
+  @include settings.md {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      &::after {
+        top: 60%;
+        left: 100%;
+        width: 21px;
+        height: 19px;
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+  }
+  @include settings.lg {
+    &:last-child {
+      .program-flow-item__content {
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+    }
+  }
+
+  .program-flow-item__title {
+    position: relative;
+    width: 6em;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #EF857D;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 0;
+      display: inline-block;
+      width: 86px;
+      height: 72px;
+      background: no-repeat center/contain;
+      transform: translate(1em, -70%);
+    }
+
+    @include settings.md {
+      width: fit-content;
+      font-size: .9rem;
+    }
+  }
+
+  &:nth-child(1) .program-flow-item__title::before {
+    background-image: url(../images/program-number1.png);
+  }
+
+  &:nth-child(2) .program-flow-item__title::before {
+    background-image: url(../images/program-number2.png);
+  }
+
+  &:nth-child(3) .program-flow-item__title::before {
+    background-image: url(../images/program-number3.png);
+  }
+
+  &:nth-child(4) .program-flow-item__title::before {
+    background-image: url(../images/program-number4.png);
+  }
+}
+
+.program-flow-item__content {
+  margin: 0;
+  line-height: 1.6;
+  font-size: .8rem;
+  @include settings.md {
+    font-size: 11px;
+  }
+}
+
+.program-flow-item__figure {
+  margin: .5rem 0 0;
+
+  & > img {
+    width: auto;
+    height: 190px;
+  }
+
+  @include settings.md {
+    margin-top: auto;
+    & > img {
+      height: auto;
+      max-height: 158px;
+    }
+  }
+}

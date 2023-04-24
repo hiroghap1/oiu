@@ -1,0 +1,111 @@
+@use "../settings/settings";
+
+.top-copy {
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.3;
+  @include settings.lg {
+    font-size: 11px;
+    letter-spacing: .2em;
+  }
+}
+
+.top-program {
+  aspect-ratio: 53 / 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: -5px auto 0;
+  padding: 0 48px;
+  background: url(../images/top-program-bg.png) no-repeat center/contain;
+  text-align: center;
+  font-size: clamp(10px, 2vw, 11px);
+  @include settings.lg {
+    font-size: 13px;
+  }
+}
+
+.top-title {
+  position: relative;
+  width: fit-content;
+  margin: 1.8em auto .4em;
+  text-align: center;
+  font-size: min(6.8vw, 2.2rem);
+  @include settings.sm {
+    margin-top: .25em;
+    font-size: 2.5rem;
+    letter-spacing: .1em;
+  }
+  @include settings.lg {
+    font-size: 3.5rem;
+  }
+
+  & > .top-title--discover {
+    position: absolute;
+    bottom: 100%;
+    left: -2px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: .9rem;
+    transform-origin: left bottom;
+    transform: rotate(-10deg);
+    @include settings.sm {
+      transform: rotate(-10deg) translateY(-.5rem);
+      letter-spacing: .05em;
+    }
+    @include settings.lg {
+      bottom: 4rem;
+      left: -50px;
+      font-size: 1.1rem;
+      letter-spacing: .1em;
+    }
+
+    &::before, &::after {
+      position: absolute;
+      top: 50%;
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 150%;
+      background-color: #000;
+    }
+
+    &::before {
+      left: 0;
+      transform: rotate(-42deg) translateY(-50%);
+    }
+
+    &::after {
+      right: 0;
+      transform: rotate(35deg) translateY(-50%);
+    }
+  }
+
+  & > span {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: inline-block;
+      content: '';
+      left: 50%;
+      top: -6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffe67a;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.top-lead {
+  text-align: center;
+  font-size: min(4.26vw, 1.2rem);
+  @include settings.lg {
+    font-size: 1.3rem
+  }
+}

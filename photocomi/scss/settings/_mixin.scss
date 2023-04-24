@@ -1,0 +1,57 @@
+@use "variables" as v;
+
+@mixin sm {
+  @media screen and (min-width: v.$sm) {
+    @content;
+  }
+}
+
+@mixin max-sm {
+  @media not screen and (min-width: (v.$sm)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: v.$md) {
+    @content;
+  }
+}
+
+@mixin max-md {
+  @media not screen and (min-width: (v.$md)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: v.$lg) {
+    @content;
+  }
+}
+
+@mixin max-lg {
+  @media not screen and (min-width: (v.$lg)) {
+    @content;
+  }
+}
+
+@mixin breakMin($breakPoint) {
+  @media screen and (min-width: ($breakPoint)) {
+    @content;
+  }
+}
+
+@mixin breakMax($breakPoint) {
+  @media screen and (max-width: ($breakPoint)) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media screen and (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
