@@ -1,0 +1,31 @@
+@use "../settings/settings";
+
+.c-container {
+  max-width: calc(var(--contents-width) + var(--base-gutter) * 2);
+  padding: var(--base-gutter);
+  margin-left: auto;
+  margin-right: auto;
+  @include settings.md {
+    //margin-left: var(--base-gutter);
+    //margin-right: var(--base-gutter);
+  }
+  @include settings.breakMin(1006px) {
+    //margin-left: auto;
+    //margin-right: auto;
+  }
+
+  &.is-border {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: var(--base-gutter);
+      content: '';
+      display: block;
+      width: calc(100% - var(--base-gutter) * 2);
+      height: 1px;
+      background-color: var(--color-emphasis);
+    }
+  }
+}

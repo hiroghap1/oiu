@@ -1,0 +1,117 @@
+@use "settings/settings";
+
+@include settings.lg {
+  :root {
+    --box-shadow: 3px 3px 4px rgba(0, 0, 0, .2);
+  }
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-feature-settings: "palt";
+  line-height: 1.85;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+main {
+  padding-top: var(--base-gutter);
+  padding-bottom: var(--base-gutter);
+}
+
+strong {
+  font-weight: normal;
+  background: linear-gradient(transparent 60%, #ffe67a 60%, #ffe67a 90%, transparent 90%);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.lead {
+  font-size: 1.2rem;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+
+  & > span {
+    font-size: 1rem;
+  }
+}
+
+figure {
+  margin: var(--base-gutter) 0;
+  text-align: center;
+}
+
+
+.section-title {
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1.4rem;
+
+  @include settings.sm {
+    font-size: 2rem;
+  }
+
+  &::before {
+    position: absolute;
+    top: -44px;
+    left: -39px;
+    display: inline-block;
+    width: 72px;
+    height: 75px;
+    background: url(../images/title-decoration.png) no-repeat center/contain;
+    content: '';
+  }
+
+  @include settings.md {
+    font-size: 1.7rem;
+    &::before {
+      top: -33px;
+      left: -64px;
+      width: 60px;
+      height: 62px;
+    }
+  }
+
+  &.section-title--student {
+    margin-bottom: 1.75rem;
+
+    &::before {
+      transform: translateX(1em);
+    }
+  }
+}
+
+.signature {
+  text-align: right;
+  line-height: 1.2;
+  font-size: 1.5rem;
+
+  & > span {
+    font-size: .9rem;
+  }
+
+  @include settings.lg {
+    font-size: 1.1rem;
+    & > span {
+      font-size: .8rem;
+    }
+  }
+}

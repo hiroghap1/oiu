@@ -1,0 +1,25 @@
+@use "../settings/settings";
+
+.c-section {
+  //padding-top: var(--base-gutter);
+  //padding-bottom: var(--base-gutter);
+  //@include settings.md {
+  //    padding-top: var(--base-gutter);
+  //    padding-bottom: var(--base-gutter);
+  //}
+  //@include settings.breakMin(1006px) {
+  //    padding-top: var(--base-gutter);
+  //    padding-bottom: var(--base-gutter);
+  //}
+}
+
+.c-section__title {
+  letter-spacing: .075em;
+  color: var(--color-emphasis);
+}
+
+.c-section__lead {
+  letter-spacing: .075em;
+  font-size: 1.5em;
+  line-height: 1.5;
+}

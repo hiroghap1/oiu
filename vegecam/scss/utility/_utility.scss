@@ -1,0 +1,15 @@
+@use "../settings/settings";
+
+.u-emphasis {
+  color: #DB0A17;
+}
+
+.u-hidden {
+  display: none;
+}
+
+.u-visible--md {
+  @include settings.md {
+    display: block;
+  }
+}
