@@ -1,0 +1,9 @@
+@use "../settings/settings";
+
+.p-practice {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: var(--base-gutter);
+  padding-right: var(--base-gutter);
+  background-color: #fffcd9;
+}
