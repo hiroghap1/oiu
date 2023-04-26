@@ -1,12 +1,16 @@
 @use "../settings/settings";
 
 .p-project__title {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .p-project__figure {
   display: grid;
   gap: 3px;
+  margin-top: 1.5em;
 
   & > img {
     width: 100%;
@@ -16,6 +20,29 @@
 }
 
 .p-project__item {
+  position: relative;
+  padding-block: calc(var(--base-gutter) * 2);
+
+  &:not(:first-of-type) {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-emphasis);
+      content: '';
+    }
+
+    &.p-practice {
+      &::before {
+        left: var(--base-gutter);
+        width: calc(100% - var(--base-gutter) * 2);
+      }
+    }
+  }
+
   &:nth-of-type(1) {
     & > .p-project__figure {
       grid-template-columns: 1fr 1fr;

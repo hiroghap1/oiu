@@ -1,0 +1,31 @@
+@use "../settings/settings";
+
+.p-footer {
+  & > .c-container {
+    padding-top: 0;
+  }
+}
+
+.p-attention {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+.c-cta-button {
+  display: block;
+  max-width: 320px;
+  margin: var(--base-gutter) auto 0;
+  padding: 1.25em 1em;
+  color: var(--color-font);
+  background-color: #ffe67a;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: .1em;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+
+  & + .c-cta-button {
+    margin-top: calc(var(--base-gutter) * 1.5);
+  }
+}

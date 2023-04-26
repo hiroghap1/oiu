@@ -32,6 +32,11 @@ ul, ol {
   list-style: none;
 }
 
+p {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
 .lead {
   font-size: 1.2rem;
 }
@@ -51,54 +56,6 @@ h3 {
   }
 }
 
-figure {
-  margin: var(--base-gutter) 0;
-  text-align: center;
-}
-
-
-.section-title {
-  position: relative;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-size: 1.4rem;
-
-  @include settings.sm {
-    font-size: 2rem;
-  }
-
-  &::before {
-    position: absolute;
-    top: -44px;
-    left: -39px;
-    display: inline-block;
-    width: 72px;
-    height: 75px;
-    background: url(../images/title-decoration.png) no-repeat center/contain;
-    content: '';
-  }
-
-  @include settings.md {
-    font-size: 1.7rem;
-    &::before {
-      top: -33px;
-      left: -64px;
-      width: 60px;
-      height: 62px;
-    }
-  }
-
-  &.section-title--student {
-    margin-bottom: 1.75rem;
-
-    &::before {
-      transform: translateX(1em);
-    }
-  }
-}
-
 .signature {
   text-align: right;
   line-height: 1.2;
@@ -114,4 +71,8 @@ figure {
       font-size: .8rem;
     }
   }
+}
+
+figure {
+  margin: 0;
 }

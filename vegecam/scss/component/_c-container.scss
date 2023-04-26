@@ -2,7 +2,7 @@
 
 .c-container {
   max-width: calc(var(--contents-width) + var(--base-gutter) * 2);
-  padding: var(--base-gutter);
+  padding: calc(var(--base-gutter) * 1.5) var(--base-gutter);
   margin-left: auto;
   margin-right: auto;
   @include settings.md {
