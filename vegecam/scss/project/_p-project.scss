@@ -53,8 +53,11 @@
 
     &.p-practice {
       &::before {
-        left: var(--base-gutter);
+        left: 0;
+        right: 0;
         width: calc(100% - var(--base-gutter) * 2);
+        max-width: var(--contents-width);
+        margin-inline: auto;
       }
     }
   }

@@ -769,8 +769,11 @@ figure {
   content: "";
 }
 .p-project__item:not(:first-of-type, .p-estimation).p-practice::before {
-  left: var(--base-gutter);
+  left: 0;
+  right: 0;
   width: calc(100% - var(--base-gutter) * 2);
+  max-width: var(--contents-width);
+  margin-inline: auto;
 }
 .p-project__item:nth-of-type(1) > .p-project__figure {
   grid-template-columns: 0.6325411335fr 0.3674588665fr;
