@@ -33,6 +33,7 @@
       display: grid;
       grid-template-columns: .4fr .6fr;
       gap: var(--base-gutter);
+      align-items: start;
     }
     @include settings.lg {
       gap: calc(var(--base-gutter) * 2);

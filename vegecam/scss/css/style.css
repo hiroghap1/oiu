@@ -751,6 +751,7 @@ figure {
     display: grid;
     grid-template-columns: 0.4fr 0.6fr;
     gap: var(--base-gutter);
+    align-items: start;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1006px) {
