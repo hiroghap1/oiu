@@ -3,6 +3,10 @@
 .p-footer {
   & > .c-container {
     padding-top: 0;
+    @include settings.md {
+      padding-top: calc(var(--base-gutter) * 1.5);
+      padding-bottom: calc(var(--base-gutter) * 4);
+    }
   }
 }
 
@@ -27,5 +31,21 @@
 
   & + .c-cta-button {
     margin-top: calc(var(--base-gutter) * 1.5);
+  }
+}
+
+.p-cta {
+  @include settings.md {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(var(--base-gutter) * 2);
+    margin-top: calc(var(--base-gutter) * 2);
+    .c-cta-button {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      font-size: 24px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    }
   }
 }

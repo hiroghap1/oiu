@@ -356,6 +356,10 @@
     --box-shadow: 3px 3px 4px rgba(0, 0, 0, .2);
   }
 }
+html {
+  font-size: 14px;
+}
+
 body {
   font-family: "Noto Sans JP", sans-serif;
   font-feature-settings: "palt";
@@ -446,23 +450,41 @@ figure {
   background-color: var(--color-emphasis);
 }
 
-.c-section__title {
-  letter-spacing: 0.075em;
-  color: var(--color-emphasis);
+.c-section.p-process .c-container {
+  padding-top: 0;
 }
-.c-section__title.p-process {
+.c-section.p-process .c-section__title {
   padding: 0.5em 0;
   border-top: 1px solid var(--color-emphasis);
   border-bottom: 1px solid var(--color-emphasis);
-  font-size: min(5.5vw, 1.5em);
+  font-size: min(5.5vw, 2em);
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .c-section.p-process .c-section__title {
+    padding: 1.25em 0;
+    text-align: left;
+  }
+}
+
+.c-section__title {
+  font-size: 2em;
+  letter-spacing: 0.075em;
+  color: var(--color-emphasis);
 }
 
 .c-section__lead {
   margin-top: 1rem;
   letter-spacing: 0.075em;
-  font-size: 1.5em;
+  font-size: 2em;
   line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+  .p-key-visual img {
+    max-height: 90vh;
+    object-fit: cover;
+  }
 }
 
 .p-introduction {
@@ -496,7 +518,7 @@ figure {
 }
 .p-introduction__title > span:nth-of-type(1) {
   display: block;
-  font-size: min(6.9vw, 50px);
+  font-size: min(6.9vw, 40px);
   line-height: 1.3;
   letter-spacing: 0.07em;
 }
@@ -518,8 +540,8 @@ figure {
 .p-practice {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  padding-left: var(--base-gutter);
-  padding-right: var(--base-gutter);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
   background-color: #fffcd9;
   counter-set: practice;
 }
@@ -527,12 +549,30 @@ figure {
 .p-practice__list {
   margin-top: calc(var(--base-gutter) * 2);
 }
+@media screen and (min-width: 768px) {
+  .p-practice__list {
+    grid-column: 1/3;
+  }
+}
 
 .p-practice__item {
   position: relative;
   padding-block: calc(var(--base-gutter) * 2);
   border-top: 1px dashed var(--color-emphasis);
   counter-increment: practice;
+}
+@media screen and (min-width: 768px) {
+  .p-practice__item {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    gap: var(--base-gutter);
+    align-items: start;
+  }
+}
+@media screen and (min-width: 1006px) {
+  .p-practice__item {
+    gap: calc(var(--base-gutter) * 2);
+  }
 }
 .p-practice__item::before {
   position: absolute;
@@ -663,6 +703,11 @@ figure {
   gap: 3px;
   margin-top: 1.5em;
 }
+@media screen and (min-width: 768px) {
+  .p-practice__figure {
+    margin-top: 0;
+  }
+}
 .p-practice__figure > img {
   width: 100%;
   height: 100%;
@@ -675,11 +720,21 @@ figure {
   align-items: center;
   gap: 10px;
 }
+@media screen and (min-width: 768px) {
+  .p-project__title {
+    align-items: flex-start;
+  }
+}
 
 .p-project__figure {
   display: grid;
   gap: 3px;
   margin-top: 1.5em;
+}
+@media screen and (min-width: 768px) {
+  .p-project__figure {
+    margin-top: 0;
+  }
 }
 .p-project__figure > img {
   width: 100%;
@@ -691,7 +746,19 @@ figure {
   position: relative;
   padding-block: calc(var(--base-gutter) * 2);
 }
-.p-project__item:not(:first-of-type)::before {
+@media screen and (min-width: 768px) {
+  .p-project__item:not(.p-estimation) {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    gap: var(--base-gutter);
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1006px) {
+  .p-project__item {
+    gap: calc(var(--base-gutter) * 2);
+  }
+}
+.p-project__item:not(:first-of-type, .p-estimation)::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -701,20 +768,20 @@ figure {
   background-color: var(--color-emphasis);
   content: "";
 }
-.p-project__item:not(:first-of-type).p-practice::before {
+.p-project__item:not(:first-of-type, .p-estimation).p-practice::before {
   left: var(--base-gutter);
   width: calc(100% - var(--base-gutter) * 2);
 }
 .p-project__item:nth-of-type(1) > .p-project__figure {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.6325411335fr 0.3674588665fr;
 }
 .p-project__item:nth-of-type(1) > .p-project__figure > img:nth-of-type(1) {
-  grid-column: 1/3;
-  grid-row: 1/2;
+  grid-column: 1/2;
+  grid-row: 1/3;
 }
 .p-project__item:nth-of-type(1) > .p-project__figure > img:nth-of-type(2) {
-  grid-column: 1/2;
-  grid-row: 2/3;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 .p-project__item:nth-of-type(1) > .p-project__figure > img:nth-of-type(3) {
   grid-column: 2/3;
@@ -749,6 +816,13 @@ figure {
 .p-leaders-voice > .c-container {
   padding-bottom: 0;
 }
+@media screen and (min-width: 768px) {
+  .p-leaders-voice > .c-container {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    gap: var(--base-gutter);
+  }
+}
 .p-leaders-voice .c-section__title {
   line-height: 1;
 }
@@ -761,6 +835,11 @@ figure {
 .p-leaders-voice__image {
   max-width: 250px;
 }
+@media screen and (min-width: 768px) {
+  .p-leaders-voice__image {
+    max-width: 100%;
+  }
+}
 
 .p-leaders-voice__director {
   font-size: 15px;
@@ -770,8 +849,47 @@ figure {
   vertical-align: baseline;
 }
 
+.p-vegecam {
+  position: relative;
+}
+.p-vegecam > .c-container:nth-of-type(2) {
+  padding-bottom: calc(var(--base-gutter) * 4.5);
+}
+@media screen and (min-width: 1006px) {
+  .p-vegecam > .c-container {
+    padding-right: 440px;
+  }
+}
+.p-vegecam .c-section__lead {
+  font-size: 1.8em;
+}
+
+.p-vegecam__figure {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: calc((100vw - var(--contents-width)) / 2);
+  height: 100%;
+}
+@media screen and (min-width: 1006px) {
+  .p-vegecam__figure {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+.p-vegecam__figure .p-vegecam__image {
+  width: 45%;
+}
+
 .p-footer > .c-container {
   padding-top: 0;
+}
+@media screen and (min-width: 768px) {
+  .p-footer > .c-container {
+    padding-top: calc(var(--base-gutter) * 1.5);
+    padding-bottom: calc(var(--base-gutter) * 4);
+  }
 }
 
 .p-attention {
@@ -795,6 +913,22 @@ figure {
 }
 .c-cta-button + .c-cta-button {
   margin-top: calc(var(--base-gutter) * 1.5);
+}
+
+@media screen and (min-width: 768px) {
+  .p-cta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(var(--base-gutter) * 2);
+    margin-top: calc(var(--base-gutter) * 2);
+  }
+  .p-cta .c-cta-button {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 24px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

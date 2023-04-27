@@ -1,0 +1,10 @@
+@use "../settings/settings";
+
+.p-key-visual {
+  @include settings.md {
+    img {
+      max-height: 90vh;
+      object-fit: cover;
+    }
+  }
+}
