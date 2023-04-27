@@ -482,8 +482,7 @@ figure {
 
 @media screen and (min-width: 768px) {
   .p-key-visual img {
-    max-height: 90vh;
-    object-fit: cover;
+    width: 100%;
   }
 }
 
@@ -730,6 +729,7 @@ figure {
   display: grid;
   gap: 3px;
   margin-top: 1.5em;
+  min-height: 0;
 }
 @media screen and (min-width: 768px) {
   .p-project__figure {

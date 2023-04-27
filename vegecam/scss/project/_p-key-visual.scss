@@ -3,8 +3,9 @@
 .p-key-visual {
   @include settings.md {
     img {
-      max-height: 90vh;
-      object-fit: cover;
+      //max-height: 90vh;
+      //object-fit: cover;
+      width: 100%;
     }
   }
 }
