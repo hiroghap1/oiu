@@ -921,23 +921,40 @@ figure {
   letter-spacing: 0.1em;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
+@media screen and (min-width: 768px) {
+  .c-cta-button {
+    max-width: calc((100% - var(--base-gutter) * 2) / 2);
+    width: calc((100% - var(--base-gutter) * 2) / 2);
+    margin: 0;
+    font-size: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    transition: filter 0.3s ease-in-out;
+  }
+  .c-cta-button:hover {
+    filter: brightness(0.8);
+  }
+}
+@media screen and (min-width: 1006px) {
+  .c-cta-button {
+    font-size: 24px;
+  }
+}
 .c-cta-button + .c-cta-button {
   margin-top: calc(var(--base-gutter) * 1.5);
+}
+@media screen and (min-width: 768px) {
+  .c-cta-button + .c-cta-button {
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .p-cta {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: calc(var(--base-gutter) * 2);
     margin-top: calc(var(--base-gutter) * 2);
-  }
-  .p-cta .c-cta-button {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    font-size: 24px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
   }
 }
 

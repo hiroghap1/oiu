@@ -28,24 +28,35 @@
   font-size: 18px;
   letter-spacing: .1em;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  @include settings.md {
+    max-width: calc((100% - var(--base-gutter) * 2) / 2);
+    width: calc((100% - var(--base-gutter) * 2) / 2);
+    margin: 0;
+    font-size: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    transition: filter .3s ease-in-out;
+    &:hover {
+      filter: brightness(.8);
+    }
+  }
+  @include settings.lg {
+    font-size: 24px;
+  }
 
   & + .c-cta-button {
     margin-top: calc(var(--base-gutter) * 1.5);
+    @include settings.md {
+      margin-top: 0;
+    }
   }
 }
 
 .p-cta {
   @include settings.md {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: calc(var(--base-gutter) * 2);
     margin-top: calc(var(--base-gutter) * 2);
-    .c-cta-button {
-      max-width: 100%;
-      width: 100%;
-      margin: 0;
-      font-size: 24px;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
-    }
   }
 }
