@@ -1,0 +1,62 @@
+@use "../settings/settings";
+
+.p-footer {
+  & > .c-container {
+    padding-top: 0;
+    @include settings.md {
+      padding-top: calc(var(--base-gutter) * 1.5);
+      padding-bottom: calc(var(--base-gutter) * 4);
+    }
+  }
+}
+
+.p-attention {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+.c-cta-button {
+  display: block;
+  max-width: 320px;
+  margin: var(--base-gutter) auto 0;
+  padding: 1.25em 1em;
+  color: var(--color-font);
+  background-color: #ffe67a;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: .1em;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  @include settings.md {
+    max-width: calc((100% - var(--base-gutter) * 2) / 2);
+    width: calc((100% - var(--base-gutter) * 2) / 2);
+    margin: 0;
+    font-size: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    transition: filter .3s ease-in-out;
+    &:hover {
+      filter: brightness(.8);
+    }
+  }
+  @include settings.lg {
+    font-size: 24px;
+  }
+
+  & + .c-cta-button {
+    margin-top: calc(var(--base-gutter) * 1.5);
+    @include settings.md {
+      margin-top: 0;
+    }
+  }
+}
+
+.p-cta {
+  @include settings.md {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--base-gutter) * 2);
+    margin-top: calc(var(--base-gutter) * 2);
+  }
+}

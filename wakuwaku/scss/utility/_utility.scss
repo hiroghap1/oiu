@@ -1,0 +1,27 @@
+@use "../settings/settings";
+
+.u-emphasis {
+  color: #DB0A17;
+}
+
+.u-hidden {
+  display: none;
+}
+
+.u-visible--md {
+  @include settings.md {
+    display: block;
+  }
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-mt-1 {
+  margin-top: var(--base-gutter);
+}

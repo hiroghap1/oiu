@@ -1,0 +1,16 @@
+@use "../settings/settings";
+
+.p-key-visual {
+  @include settings.md {
+    img {
+      //max-height: 90vh;
+      max-height: 100vh;
+      max-height: 100svh;
+      min-height: 100vh;
+      min-height: 100svh;
+      object-fit: cover;
+      object-position: center top;
+      //width: 100%;
+    }
+  }
+}

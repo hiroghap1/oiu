@@ -1,0 +1,16 @@
+$sm: 576px;
+$md: 768px;
+$lg: 1006px;
+
+:root {
+  --base-gutter: 20px;
+  --break-sm: #{$sm};
+  --break-md: #{$md};
+  --break-lg: #{$lg};
+  --box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+  --contents-width: 960px;
+
+  --color-font: #333333;
+  --color-emphasis: #DB0A17;
+  --color-accent: #00964D;
+}

@@ -1,0 +1,40 @@
+@use "../settings/settings";
+
+.p-leaders-voice {
+  background-color: #fdede4;
+
+  & > .c-container {
+    padding-bottom: 0;
+    @include settings.md {
+      display: grid;
+      grid-template-columns: .6fr .4fr;
+      gap: var(--base-gutter);
+    }
+  }
+
+  .c-section__title {
+    line-height: 1;
+
+    & > img {
+      width: 60%;
+      max-width: 245px;
+      vertical-align: baseline;
+    }
+  }
+}
+
+.p-leaders-voice__image {
+  max-width: 250px;
+  @include settings.md {
+    max-width: 100%;
+  }
+}
+
+.p-leaders-voice__director {
+  font-size: 15px;
+
+  & > img {
+    margin-right: 1em;
+    vertical-align: baseline;
+  }
+}
