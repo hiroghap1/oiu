@@ -366,6 +366,7 @@ html {
 }
 
 body {
+  padding-bottom: 30px;
   font-family: "Noto Sans JP", sans-serif;
   font-feature-settings: "palt";
   line-height: 1.85;
