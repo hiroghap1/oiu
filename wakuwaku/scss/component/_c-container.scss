@@ -2,7 +2,7 @@
 
 .c-container {
   max-width: calc(var(--contents-width) + var(--base-gutter) * 2);
-  padding: calc(var(--base-gutter) * 1.5) var(--base-gutter);
+  padding: var(--base-gutter) var(--base-gutter);
   margin-left: auto;
   margin-right: auto;
   @include settings.md {
@@ -28,4 +28,11 @@
       background-color: var(--color-emphasis);
     }
   }
+}
+
+.c-fluid-container {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
 }

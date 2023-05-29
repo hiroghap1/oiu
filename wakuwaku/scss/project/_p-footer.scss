@@ -16,12 +16,16 @@
 }
 
 .c-cta-button {
-  display: block;
+  display: flex;
   max-width: 320px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
   margin: var(--base-gutter) auto 0;
-  padding: 1.25em 1em;
+  padding: .5em 1em;
   color: var(--color-font);
   background-color: #ffe67a;
+  line-height: 1.4;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
@@ -57,6 +61,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: calc(var(--base-gutter) * 2);
-    margin-top: calc(var(--base-gutter) * 2);
+    //margin-top: calc(var(--base-gutter) * 2);
   }
 }

@@ -1,0 +1,104 @@
+@use "../settings/settings";
+
+.p-wakuwaku-land {
+  @include settings.md {
+    display: flex;
+    gap: 20px;
+    & > div {
+      width: 50%;
+      min-width: 50%;
+    }
+  }
+;
+}
+
+.p-wakuwaku-land__title {
+  display: flex;
+  align-items: center;
+  line-height: 1.3;
+  font-size: min(5vw, 26px);
+  font-weight: bold;
+  @include settings.md {
+    font-size: min(2.6vw, 26px);
+  }
+}
+
+.p-wakuwaku-land__icon {
+  width: 62px;
+  margin-right: 10px;
+}
+
+.p-wakuwaku-land__sub-title {
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.p-wakuwaku-land__list {
+  padding: 0;
+  line-height: 1.3;
+  @include settings.sm {
+    padding: 0 .5em 0;
+    font-size: 18px;
+  }
+;
+}
+
+.p-wakuwaku-land__item {
+  display: flex;
+  gap: 10px;
+
+  &::before {
+    content: '';
+    display: block;
+  }
+
+  &.p-wakuwaku-land__item {
+    margin-top: 1em;
+  }
+
+  &:nth-of-type(1)::before {
+    margin-top: 4px;
+    min-width: 23px;
+    height: 21px;
+    background: url(../images/wakuwaku-land-1.png) no-repeat center/contain;
+  }
+
+  &:nth-of-type(2)::before {
+    margin-top: 1px;
+    min-width: 23px;
+    height: 21px;
+    background: url(../images/wakuwaku-land-2.png) no-repeat center/contain;
+  }
+}
+
+.p-wakuwaku-land__hr {
+  vertical-align: baseline;
+}
+
+.p-wakuwaku-land__sub-list {
+  padding-left: 1.5em;
+}
+
+.p-wakuwaku-land__sub-item {
+  list-style-type: disc;
+}
+
+.p-wakuwaku-land__information {
+  margin-top: 4em;
+  font-size: 17px;
+  text-align: center;
+
+  & > p {
+    margin-top: .5em;
+  }
+
+  @include settings.md {
+    margin-top: 1em;
+    text-align: left;
+    & > p {
+      margin-top: 1em;
+      line-height: 1.4;
+    }
+  }
+}

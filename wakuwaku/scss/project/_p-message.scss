@@ -1,0 +1,120 @@
+@use "../settings/settings";
+
+.p-message {
+
+}
+
+
+.p-message__title {
+  margin-top: 20px;
+
+  & > img {
+    width: 90%;
+  }
+
+  @include settings.md {
+    background: url(../images/butterfly.png) no-repeat right 20% center/55px;
+    & > img {
+      width: 65%;
+    }
+  }
+}
+
+.p-message__item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  background-color: #fff;
+  font-size: 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .15);
+  @include settings.sm {
+    gap: 30px;
+    flex-direction: row;
+    padding: 2rem;
+  }
+  @include settings.lg {
+    margin-top: 40px;
+  }
+
+  &:nth-of-type(1) {
+    & > .p-message__figure {
+      min-width: 110px;
+      max-width: 200px;
+      margin-left: auto;
+      @include settings.md {
+        min-width: 150px;
+      }
+    }
+
+    @include settings.md {
+      position: relative;
+      width: 75%;
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        content: '';
+        display: block;
+        width: 25%;
+        aspect-ratio: 1 / 1;
+        background: url(../images/message1-bg.png) no-repeat center/contain;
+        transform: translate(120%, -50%);
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    @include settings.sm {
+      flex-direction: row-reverse;
+      margin-left: auto;
+    }
+    @include settings.md {
+      width: 85%;
+    }
+
+    & > .p-message__figure {
+      min-width: 160px;
+      max-width: 220px;
+      margin-right: auto;
+      @include settings.sm {
+        background: #fff url(../images/message2-bg.png) no-repeat center bottom/120px;
+      }
+      @include settings.md {
+        min-width: 180px;
+        background-image: none;
+      }
+    }
+  }
+}
+
+.p-message__item-title {
+  letter-spacing: .1em;
+  color: #ee8593;
+  @include settings.lg {
+    & > br {
+      display: none;
+    }
+  }
+}
+
+.p-message__item-hr {
+  display: block;
+  margin-top: 10px;
+}
+
+.p-message__figcaption {
+  margin-top: 5px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 11px;
+  @include settings.md {
+    font-size: 15px;
+  }
+}
+
+.p-message__item-text {
+  margin-top: 10px;
+}
